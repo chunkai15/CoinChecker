@@ -1,1 +1,2 @@
-# APPVKU21
+# CoinChecker 
+
