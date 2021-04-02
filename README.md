@@ -1,2 +1,1 @@
-# CoinChecker 
-
+# CoinChecker
