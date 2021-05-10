@@ -13,6 +13,9 @@ import com.github.mikephil.charting.formatter.ValueFormatter
 import com.spiraldev.cryptoticker.R
 import java.text.SimpleDateFormat
 import java.util.*
+import com.github.mikephil.charting.data.CandleData;
+import com.github.mikephil.charting.interfaces.dataprovider.CandleDataProvider;
+import com.github.mikephil.charting.renderer.CandleStickChartRenderer;
 
 
 data class ChartData(val xAxisValues: List<String>, val entries: List<Entry>)

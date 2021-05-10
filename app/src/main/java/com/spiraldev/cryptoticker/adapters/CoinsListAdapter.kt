@@ -3,6 +3,8 @@ package com.spiraldev.cryptoticker.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.spiraldev.cryptoticker.R
 import com.spiraldev.cryptoticker.api.models.Coin
@@ -17,14 +19,101 @@ import kotlin.collections.ArrayList
 
 //listener for add to favourite and item click
 interface OnItemClickCallback {
-    fun onItemClick(symbol: String, id: String)
+    fun onItemClick(symbol: String, id: String, name: String)
     fun onFavouriteClicked(symbol: String)
 }
 
 class CoinsListAdapter(private val onItemClickCallback: OnItemClickCallback) :
-    RecyclerView.Adapter<CoinsListAdapter.CoinsListViewHolder>() {
+    RecyclerView.Adapter<CoinsListAdapter.CoinsListViewHolder>(), Filterable {
 
-    private val coinsList: ArrayList<CoinsListEntity> = arrayListOf()
+    private var coinsList: ArrayList<CoinsListEntity> = arrayListOf()
+
+    private var coinsFilterList: ArrayList<CoinsListEntity> = arrayListOf()
+
+    private var coinsSortList: ArrayList<CoinsListEntity> = arrayListOf()
+
+    fun sortdowntrend(){
+        var sortedList = coinsList.sortedWith(compareBy({ it.changePercent }))
+        coinsList.clear()
+        for (row in sortedList) {
+            coinsList.add(row)
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortuptrend(){
+        var sortedList = coinsList.sortedWith(compareByDescending({ it.changePercent }))
+        coinsList.clear()
+        for (row in sortedList) {
+            coinsList.add(row)
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortNumber(){
+        var sortedList = coinsList.sortedWith(compareBy({ it.price }))
+        coinsList.clear()
+        for (row in sortedList) {
+            coinsList.add(row)
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortNumberup(){
+        var sortedList = coinsList.sortedWith(compareByDescending({ it.price }))
+        coinsList.clear()
+        for (row in sortedList) {
+            coinsList.add(row)
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortNameAZ(){
+        var sortedList = coinsList.sortedWith(compareBy({ it.name }))
+        coinsList.clear()
+        for (row in sortedList) {
+            coinsList.add(row)
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortNameZA(){
+        var sortedList = coinsList.sortedWith(compareByDescending({ it.name }))
+        coinsList.clear()
+        for (row in sortedList) {
+            coinsList.add(row)
+        }
+        notifyDataSetChanged()
+    }
+
+    //Search
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                if (charSearch.isEmpty()) {
+                    coinsFilterList = coinsList
+                } else {
+                    for (row in coinsList) {
+                        if (row.name.toString().contains(charSearch.toLowerCase(Locale.ROOT))) {
+                            coinsFilterList.add(row)
+                        }
+                    }
+                    coinsList = coinsFilterList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = coinsList
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                coinsList = results?.values as ArrayList<CoinsListEntity>
+                notifyDataSetChanged()
+            }
+
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoinsListViewHolder {
         return CoinsListViewHolder(
@@ -37,6 +126,7 @@ class CoinsListAdapter(private val onItemClickCallback: OnItemClickCallback) :
     }
 
     override fun getItemCount(): Int = coinsList.size
+
 
     fun updateList(list: List<CoinsListEntity>) {
         this.coinsList.clear()
@@ -68,9 +158,11 @@ class CoinsListAdapter(private val onItemClickCallback: OnItemClickCallback) :
             itemView.setOnClickListener {
                 onItemClickCallback.onItemClick(
                     model.symbol,
-                    model.id ?: model.symbol
+                    model.id ?: model.symbol,
+                    model.name.toString()
                 )
             }
         }
     }
 }
+

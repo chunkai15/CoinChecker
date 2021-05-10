@@ -40,4 +40,6 @@ abstract class MainNavigationFragment : BaseFragment() {
             host.registerToolbarWithNavigation(this)
         }
     }
+
+    abstract fun onBackPressed()
 }

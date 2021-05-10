@@ -11,7 +11,7 @@
         android:title="@string/favourites"/>
 
     <item
-        android:id="@id/navigation_settings"
+        android:id="@id/navigation_news"
         android:icon="@drawable/ic_baseline_leaderboard_24"
         android:title="@string/news"/>
 

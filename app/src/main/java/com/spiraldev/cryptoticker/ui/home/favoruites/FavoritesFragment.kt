@@ -44,6 +44,10 @@ class FavoritesFragment : MainNavigationFragment(), OnItemClickCallback {
         initializeViews()
     }
 
+    override fun onBackPressed() {
+        TODO("Not yet implemented")
+    }
+
 
     override fun initializeViews() {
         favouritesRecyclerView.apply {
@@ -74,13 +78,14 @@ class FavoritesFragment : MainNavigationFragment(), OnItemClickCallback {
         }
     }
 
-    override fun onItemClick(symbol: String, id: String) {
+    override fun onItemClick(symbol: String, id: String, name: String) {
         requireActivity().run {
             startActivity(
                 Intent(this, ProjectProfileActivity::class.java)
                     .apply {
                         putExtra(Constants.EXTRA_SYMBOL, symbol)
                         putExtra(Constants.EXTRA_SYMBOL_ID, id)
+                        putExtra(Constants.EXTRA_NAME_COIN, name)
                     }
             )
         }

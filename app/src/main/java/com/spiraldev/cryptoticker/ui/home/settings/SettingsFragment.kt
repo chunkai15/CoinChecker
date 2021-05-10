@@ -18,6 +18,9 @@ class SettingsFragment : MainNavigationFragment() {
 
     private val viewModel: SettingsViewModel by viewModels()
     private lateinit var binding: FragmentSettingsBinding
+    override fun onBackPressed() {
+        TODO("Not yet implemented")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -26,7 +26,7 @@ class HomeActivity : BaseActivity(),
         private val TOP_LEVEL_DESTINATIONS = setOf(
             R.id.navigation_coins_list,
             R.id.navigation_favourites,
-            R.id.navigation_settings
+            R.id.navigation_news
         )
     }
 
@@ -48,6 +48,7 @@ class HomeActivity : BaseActivity(),
         appBarConfiguration = AppBarConfiguration(TOP_LEVEL_DESTINATIONS)
 
         homeBottomNavView.setupWithNavController(navController)
+
     }
 
     //Callback method to update the toolbar's title based on the selected bottom tab

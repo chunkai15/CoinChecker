@@ -16,4 +16,6 @@
 
     <string name="historical_data_error">Không thể tìm nạp dữ liệu lịch sử. Vui lòng thử lại</string>
     <string name="line_chart_title">Biểu đồ giá cho %1$s ngày\n(x-axis: Date, y-axis: Giá trong $)</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

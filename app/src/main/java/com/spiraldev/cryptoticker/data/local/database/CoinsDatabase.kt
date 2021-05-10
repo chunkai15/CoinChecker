@@ -15,7 +15,7 @@ abstract class CoinsDatabase : RoomDatabase() {
 
     companion object {
         fun buildDatabase(context: Context): CoinsDatabase {
-            return Room.databaseBuilder(context, CoinsDatabase::class.java, DATABASE_NAME)
+            return Room.databaseBuilder(context, CoinsDatabase::class.java, DATABASE_NAME) //khởi tạo cơ sở dữ liệu
                 .build()
         }
     }

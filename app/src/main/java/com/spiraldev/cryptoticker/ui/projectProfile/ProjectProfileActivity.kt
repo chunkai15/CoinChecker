@@ -26,6 +26,7 @@ class ProjectProfileActivity : BaseActivity() {
 
     private var symbol: String? = null
     private var symbolId: String? = null
+    private var nameCoin: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +49,11 @@ class ProjectProfileActivity : BaseActivity() {
             symbolId = intent?.getStringExtra(Constants.EXTRA_SYMBOL_ID)
         }
 
-        supportActionBar?.title = symbol ?: ""
+        if (intent?.hasExtra(Constants.EXTRA_NAME_COIN) == true) {
+            nameCoin = intent?.getStringExtra(Constants.EXTRA_NAME_COIN)
+        }
+
+        supportActionBar?.title = nameCoin ?: ""
         observeViewModel()
 
         viewModel.historicalData(symbolId)

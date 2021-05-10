@@ -16,6 +16,11 @@
         android:label="Yêu Thích"
         tools:layout="@layout/fragment_favorites" />
     <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.spiraldev.cryptoticker.ui.home.news.NewsCoin"
+        android:label="Tin Tức"
+        tools:layout="@layout/activity_news_coin" />
+    <fragment
         android:id="@+id/navigation_settings"
         android:name="com.spiraldev.cryptoticker.ui.home.settings.SettingsFragment"
         android:label="Cài đặt"
