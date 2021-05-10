@@ -66,10 +66,12 @@ class CoinListFragment : MainNavigationFragment(), OnItemClickCallback, OnCircle
         //Search
         search_coin.setSearchViewListener(object : MultiSearchView.MultiSearchViewListener {
             override fun onItemSelected(index: Int, s: CharSequence) {
+                viewModel.loadCoinsFromApi()
                 coinsListAdapter.filter.filter(s)
             }
 
             override fun onTextChanged(index: Int, s: CharSequence) {
+                viewModel.loadCoinsFromApi()
                 coinsListAdapter.filter.filter(s)
             }
 
