@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="menu_back_colors">
+        <item>@color/white</item>
+        <item>@color/white</item>
+        <item>@color/white</item>
+        <item>@color/white</item>
+        <item>@color/white</item>
+        <item>@color/white</item>
+    </array>
+
+    <array name="menus">
+        <item>@drawable/ic_az</item>
+        <item>@drawable/ic_az_up</item>
+        <item>@drawable/ic_number</item>
+        <item>@drawable/ic_number_up</item>
+        <item>@drawable/ic_baseline_arrow_downward_24</item>
+        <item>@drawable/ic_baseline_arrow_upward_24</item>
+    </array>
+
+</resources>
