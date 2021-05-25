@@ -50,7 +50,7 @@ class CoinListFragment : MainNavigationFragment(), OnItemClickCallback, OnCircle
             // auto refresh
             viewModel.loadCoinsFromApi()
             doTheAutoRefresh()
-        }, 600)
+        }, 6000)
     }
 
 
