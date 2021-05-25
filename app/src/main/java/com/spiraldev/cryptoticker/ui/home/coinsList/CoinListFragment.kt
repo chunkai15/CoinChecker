@@ -2,6 +2,7 @@ package com.spiraldev.cryptoticker.ui.home.coinsList
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.SearchView
@@ -29,6 +30,7 @@ class CoinListFragment : MainNavigationFragment(), OnItemClickCallback, OnCircle
     private val viewModel: CoinListViewModel by viewModels()
     private lateinit var binding: FragmentListBinding
     private var coinsListAdapter = CoinsListAdapter(this)
+    private val handler = Handler()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +43,14 @@ class CoinListFragment : MainNavigationFragment(), OnItemClickCallback, OnCircle
             }
         observeViewModel()
         return binding.root
+    }
+
+    private fun doTheAutoRefresh() {
+        handler.postDelayed(Runnable {
+            // auto refresh
+            viewModel.loadCoinsFromApi()
+            doTheAutoRefresh()
+        }, 600)
     }
 
 
@@ -84,6 +94,8 @@ class CoinListFragment : MainNavigationFragment(), OnItemClickCallback, OnCircle
             }
 
         })
+
+        doTheAutoRefresh()
 
 
 //        search_coin.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener {

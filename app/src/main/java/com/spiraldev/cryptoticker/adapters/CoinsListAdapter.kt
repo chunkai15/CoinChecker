@@ -108,11 +108,15 @@ class CoinsListAdapter(private val onItemClickCallback: OnItemClickCallback) :
 
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                coinsList = results?.values as ArrayList<CoinsListEntity>
-                notifyDataSetChanged()
-            }
-
-        }
+                    if(results == null || results.values == null) {
+                        coinsList.clear()
+                    }
+                    else {
+                        coinsList = results?.values as ArrayList<CoinsListEntity>
+                        notifyDataSetChanged()
+                    }
+                }
+         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoinsListViewHolder {
