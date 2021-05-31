@@ -11,11 +11,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.spiraldev.cryptoticker.api.Result
+import java.util.concurrent.Flow
 
 class FavoritesViewModel @ViewModelInject constructor(private val repository: FavoritesRepository) :
     BaseViewModel() {
 
     val favoriteCoinsList: LiveData<List<CoinsListEntity>> = repository.favoriteCoins
+
 
     private val _favouriteStock = MutableLiveData<CoinsListEntity>()
     val favouriteStock: LiveData<CoinsListEntity> = _favouriteStock

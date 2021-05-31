@@ -12,18 +12,26 @@
         android:roundIcon="@drawable/icons8_bitcoin_500"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.home.user.Login"></activity>
 
-        <receiver android:name=".ui.home.widget.WidgetCrypto">
+        <receiver android:name=".ui.home.widget.AppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_crypto_info" />
+                android:resource="@xml/app_widget_info" />
         </receiver>
 
-        <activity android:name=".ui.MyCustomAppIntro" android:label="My Custom AppIntro" />
+        <activity android:name=".ui.home.widget.AppWidgetConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MyCustomAppIntro"
+            android:label="My Custom AppIntro" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.SplashScreen">
             <intent-filter>

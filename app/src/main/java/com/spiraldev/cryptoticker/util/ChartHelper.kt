@@ -32,7 +32,7 @@ object ChartHelper {
             val chartData = getData(historyList)
 
             //Set the data set for the line
-            val lineDataSet = LineDataSet(chartData.entries, "Closing price for $symbol")
+            val lineDataSet = LineDataSet(chartData.entries, "Biểu đồ $symbol")
             lineDataSet.setDrawCircles(false)
             lineDataSet.color = ContextCompat.getColor(lineChart.context, R.color.line_chart_color)
             lineDataSet.valueTextColor =

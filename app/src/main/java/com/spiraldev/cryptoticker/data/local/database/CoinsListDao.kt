@@ -2,6 +2,7 @@ package com.spiraldev.cryptoticker.data.local.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import java.util.concurrent.Flow
 
 @Dao
 interface CoinsListDao {

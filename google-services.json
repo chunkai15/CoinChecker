@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "141876611616",
+    "project_id": "coinchecker-a1eeb",
+    "storage_bucket": "coinchecker-a1eeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141876611616:android:03b91cc7be69401ba10a45",
+        "android_client_info": {
+          "package_name": "com.spiraldev.cryptoticker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141876611616-i98gj90bnr22j2di3lo1l6tm95fmcq9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHL4xbQbXzUzsKRQoGlcssmmpmGzoI7iA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141876611616-i98gj90bnr22j2di3lo1l6tm95fmcq9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
