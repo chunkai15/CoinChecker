@@ -17,9 +17,9 @@ API => https://www.coingecko.com/vi/api
 
 <p align="middle">
   <img width="200" src="https://i.imgur.com/yMfbNmI.jpg">
-  <img width="200" src="https://imgur.com/a/7QWJZi6">
-  <img width="200" src="https://imgur.com/a/tyxxRkm">
-  <img width="200" src="https://imgur.com/a/Q23eaFz">
+  <img width="200" src="https://i.imgur.com/n6xE6fY.jpeg">
+  <img width="200" src="https://i.imgur.com/dgXp8no.jpeg">
+  <img width="200" src="https://i.imgur.com/ooXTzjx.jpg">
 </p>
 
 ## Architecture
