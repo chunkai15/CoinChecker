@@ -16,7 +16,7 @@ API => https://www.coingecko.com/vi/api
 ## Screenshots
 
 <p align="middle">
-  <img width="200" src="https://imgur.com/a/eAb3kYg">
+  <img width="200" src="https://i.imgur.com/yMfbNmI.jpg">
   <img width="200" src="https://imgur.com/a/7QWJZi6">
   <img width="200" src="https://imgur.com/a/tyxxRkm">
   <img width="200" src="https://imgur.com/a/Q23eaFz">
