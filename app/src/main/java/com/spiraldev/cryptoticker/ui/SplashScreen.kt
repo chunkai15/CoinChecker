@@ -6,9 +6,13 @@ import android.os.Handler
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.spiraldev.cryptoticker.R
 import com.spiraldev.cryptoticker.ui.home.HomeActivity
+import com.spiraldev.cryptoticker.ui.home.settings.SettingsFragment
 import kotlinx.android.synthetic.main.activity_splashscreen.*
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 
 class SplashScreen : AppCompatActivity() {
@@ -45,4 +49,5 @@ class SplashScreen : AppCompatActivity() {
             }
         }, SPLASH_SCREEN)
     }
+
 }

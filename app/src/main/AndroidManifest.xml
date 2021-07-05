@@ -12,7 +12,17 @@
         android:roundIcon="@drawable/icons8_bitcoin_500"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.home.user.Login"></activity>
+        <activity android:name=".ui.home.user.ProfileAuth"/>
+        <activity android:name=".ui.home.user.register" />
+        <activity android:name=".ui.home.user.Login" />
+
+        <service
+            android:name=".FireBase.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <receiver android:name=".ui.home.widget.AppWidget">
             <intent-filter>

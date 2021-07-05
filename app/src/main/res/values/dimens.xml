@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="headerTextSize">25sp</dimen>
+
     <dimen name="default_start_margin">15dp</dimen>
     <dimen name="large_start_margin">20dp</dimen>
     <dimen name="large_top_margin">15dp</dimen>

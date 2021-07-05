@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/Widget.Custom.Toolbar"
@@ -23,6 +24,51 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <RelativeLayout
+            android:id="@+id/profile_ui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileCircleImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/user"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/usernameTextView"
+                style="@style/viewParent.headerText"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/profileCircleImageView"
+                android:text="Tài khoản"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textDesUsername"
+                style="@style/viewParent.headerText"
+                android:layout_below="@id/usernameTextView"
+                android:layout_toRightOf="@id/profileCircleImageView"
+                android:text="Đăng nhập hoặc đăng ký"
+                android:textColor="#5D5C5C"
+                android:textSize="16sp" />
+
+            <ImageView
+                style="@style/viewParent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_more" />
+
+        </RelativeLayout>
+
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/settingsDarkModeSwitch"
             android:layout_width="match_parent"
@@ -30,25 +76,73 @@
             android:checked="@{viewModel.isDarkMode}"
             android:onCheckedChanged="@{(switch, checked) -> viewModel.onThemeChanged(checked)}"
             android:text="@string/dark_mode"
-            android:layout_marginTop="@dimen/default_top_margin"
+            android:layout_marginTop="15dp"
             android:layout_marginStart="@dimen/large_start_margin"
             android:layout_marginEnd="@dimen/large_start_margin"
+            android:drawableLeft="@drawable/ic_dark_mode"
+            android:drawablePadding="10dp"
             style="@style/TextAppearance.Custom.H3.Bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/profile_ui" />
+        <LinearLayout
+            android:id="@+id/ProfileUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsDarkModeSwitch"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+        <TextView
+            android:id="@+id/titleSetting"
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="Tài Khoản"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsDarkModeSwitch"
+            />
 
-<!--        <Button-->
-<!--            android:id="@+id/login"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Đăng ký"-->
-<!--            tools:layout_editor_absoluteX="20dp"-->
-<!--            tools:layout_editor_absoluteY="123dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/settingsDarkModeSwitch"-->
-<!--            />-->
+        <TextView
+            android:id="@+id/editUser"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_edit_profile"
+            android:text="Chỉnh sửa trang cá nhân"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleSetting"
+            android:clickable="true"
+            />
+
+        <TextView
+            android:id="@+id/changePasswordUser"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:layout_marginTop="10dp"
+            android:text="Đổi mật khẩu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editUser"
+            android:clickable="true"
+            />
+
+            <TextView
+                android:id="@+id/buttonLogout"
+                style="@style/viewParent.headerText.settingsTextIcon"
+                android:drawableLeft="@drawable/ic_logout"
+                android:text="Đăng xuất"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changePasswordUser"
+                />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/FrameLayout" />
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
